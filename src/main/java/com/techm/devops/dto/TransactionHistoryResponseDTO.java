@@ -12,6 +12,7 @@ import java.util.List;
 @JsonRootName("gettransactionhistoryresponse")
 public class TransactionHistoryResponseDTO {
 //    The two annotations below are extremely very important when dealing with XML and lists or arrays (VERY IMPORTANT)
+//    https://stackoverflow.com/questions/62545174/java-jackson-serializing-is-creating-2-nodes
     @JacksonXmlElementWrapper(localName = "transactionhistoryentries")
     @JacksonXmlProperty(localName = "transactionhistoryentry")
     public List<Transactionhistoryentry> transactionhistoryentries;
