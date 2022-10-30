@@ -47,22 +47,28 @@ public class MockMoMoController {
 
     @PostMapping(value = "balance", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
             produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
-    public ResponseEntity viewMobileMoneyBalance(){
+    public ResponseEntity<MobileMoneyBalanceResponseDTO> viewMobileMoneyBalance(
+            @RequestBody MobileMoneyBalanceRequestDTO mobileMoneyBalanceRequestDTO){
+        log.info("--->> {}", mobileMoneyBalanceRequestDTO);
 
-        return null;
+        return ResponseEntity.ok(new MobileMoneyBalanceResponseDTO());
     }
 
     @PostMapping(value = "unblock", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
             produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
-    public ResponseEntity unblockMobileMoneyProfile(){
+    public ResponseEntity<UnblockMoMoProfileResponseDTO> unblockMobileMoneyProfile(
+            @RequestBody UnblockMoMoProfileRequestDTO unblockMoMoProfileRequestDTO){
+        log.info("--->> {}", unblockMoMoProfileRequestDTO);
 
-        return null;
+        return ResponseEntity.ok(new UnblockMoMoProfileResponseDTO());
     }
 
     @PostMapping(value = "payment-completed", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
             produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
-    public ResponseEntity updatePaymentToECW(){
+    public ResponseEntity<PaymentCompletedResponseDTO> updatePaymentToECW(
+            @RequestBody PaymentCompletedRequestDTO paymentCompletedRequestDTO){
+        log.info("--->> {}", paymentCompletedRequestDTO);
 
-        return null;
+        return ResponseEntity.ok(new PaymentCompletedResponseDTO());
     }
 }
