@@ -1,9 +1,6 @@
 package com.techm.devops.controller;
 
-import com.techm.devops.dto.ecw.AccountHolderInfoRequestDTO;
-import com.techm.devops.dto.momo.Transactionhistoryentry;
-import com.techm.devops.dto.momo.TransactionHistoryDTO;
-import com.techm.devops.dto.momo.TransactionHistoryResponseDTO;
+import com.techm.devops.dto.momo.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -41,9 +38,11 @@ public class MockMoMoController {
 
     @PostMapping(value = "info", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
             produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
-    public ResponseEntity viewMobileMoneyRegistrationInfo(@RequestBody AccountHolderInfoRequestDTO accountHolderInfoRequestDTO) {
+    public ResponseEntity<MobileMoneyRegistrationInfoResponseDTO> viewMobileMoneyRegistrationInfo(
+            @RequestBody MobileMoneyRegistrationInfoRequestDTO mobileMoneyRegistrationInfoRequestDTO) {
+        log.info("--->> {}", mobileMoneyRegistrationInfoRequestDTO);
 
-        return null;
+        return ResponseEntity.ok(new MobileMoneyRegistrationInfoResponseDTO());
     }
 
     @PostMapping(value = "balance", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
