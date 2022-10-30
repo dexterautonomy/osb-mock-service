@@ -1,6 +1,6 @@
 package com.techm.devops.controller;
 
-import com.techm.devops.dto.*;
+import com.techm.devops.dto.ecw.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;

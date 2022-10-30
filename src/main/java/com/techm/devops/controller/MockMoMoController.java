@@ -1,8 +1,9 @@
 package com.techm.devops.controller;
 
-import com.techm.devops.dto.Transactionhistoryentry;
-import com.techm.devops.dto.TransactionHistoryDTO;
-import com.techm.devops.dto.TransactionHistoryResponseDTO;
+import com.techm.devops.dto.ecw.AccountHolderInfoRequestDTO;
+import com.techm.devops.dto.momo.Transactionhistoryentry;
+import com.techm.devops.dto.momo.TransactionHistoryDTO;
+import com.techm.devops.dto.momo.TransactionHistoryResponseDTO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -24,7 +25,7 @@ public class MockMoMoController {
 
     @PostMapping(value = "transaction-history", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
     produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
-    public ResponseEntity<TransactionHistoryResponseDTO> getTransactionHistory(@RequestBody TransactionHistoryDTO transactionHistoryDTO) {
+    public ResponseEntity<TransactionHistoryResponseDTO> viewMobileMoneyTransactions(@RequestBody TransactionHistoryDTO transactionHistoryDTO) {
         log.info("--->> {}", transactionHistoryDTO);
 
         TransactionHistoryResponseDTO transactionHistoryResponseDTO = new TransactionHistoryResponseDTO();
@@ -40,28 +41,28 @@ public class MockMoMoController {
 
     @PostMapping(value = "info", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
             produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
-    public ResponseEntity getAccountHolderInfo(){
+    public ResponseEntity viewMobileMoneyRegistrationInfo(@RequestBody AccountHolderInfoRequestDTO accountHolderInfoRequestDTO) {
 
         return null;
     }
 
     @PostMapping(value = "balance", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
             produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
-    public ResponseEntity getBalance(){
+    public ResponseEntity viewMobileMoneyBalance(){
 
         return null;
     }
 
     @PostMapping(value = "unblock", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
             produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
-    public ResponseEntity unblockAccount(){
+    public ResponseEntity unblockMobileMoneyProfile(){
 
         return null;
     }
 
     @PostMapping(value = "payment-completed", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
             produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
-    public ResponseEntity paymentCompleted(){
+    public ResponseEntity updatePaymentToECW(){
 
         return null;
     }
