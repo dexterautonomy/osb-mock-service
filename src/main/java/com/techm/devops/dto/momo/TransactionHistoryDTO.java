@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonRootName;
 import lombok.Data;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.time.LocalDateTime;
+
 @Data
 @JsonRootName("gettransactionhistoryrequest")
 public class TransactionHistoryDTO {
@@ -14,7 +16,7 @@ public class TransactionHistoryDTO {
     @JsonProperty("transactionstatus")
     public String transactionstatus;
     @JsonProperty("datefrom")
-    public String datefrom;
+    public LocalDateTime datefrom;
     @JsonProperty("transactiontypes")
     public String transactiontypes;
 }

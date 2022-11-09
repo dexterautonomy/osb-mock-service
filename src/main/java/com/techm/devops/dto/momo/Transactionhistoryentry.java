@@ -3,6 +3,8 @@ package com.techm.devops.dto.momo;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
+import java.time.LocalDateTime;
+
 @Data
 public class Transactionhistoryentry {
     @JsonProperty("financialtransactionid")
@@ -12,9 +14,9 @@ public class Transactionhistoryentry {
     @JsonProperty("transfertype")
     public String transfertype = "TYPE";
     @JsonProperty("startdate")
-    public String startdate = "11th Sept, 2023";
+    public LocalDateTime startdate = LocalDateTime.now();
     @JsonProperty("commitdate")
-    public String commitdate = "11th Sept, 2023";;
+    public LocalDateTime commitdate = LocalDateTime.now();
     @JsonProperty("fxrate")
     public String fxrate = "FIXED";
     @JsonProperty("initiatinguser")
