@@ -1,22 +1,18 @@
 package com.techm.devops.controller.ss;
 
-import com.techm.devops.dto.ecw.UpdateCitizenship;
-import com.techm.devops.dto.ecw.UpdateCitizenshipResponse;
 import com.techm.devops.dto.ss.provisioning.SendSyncReqResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @Slf4j
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("api/v1/huawei")
+@CrossOrigin(maxAge = 3600, origins = "*")
 public class MockHuaweiProvisioningController {
 
     @PostMapping(value = "addsub", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
