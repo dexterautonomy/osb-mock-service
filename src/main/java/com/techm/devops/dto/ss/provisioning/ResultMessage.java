@@ -7,8 +7,8 @@ import lombok.Data;
 public class ResultMessage {
 
     @JsonProperty("MessageHeader")
-    public MessageHeader messageHeader;
+    public MessageHeader messageHeader = new MessageHeader();
     @JsonProperty("MessageBody")
-    public MessageBody messageBody;
+    public MessageBody messageBody = new MessageBody();
 
 }

@@ -7,6 +7,6 @@ import lombok.Data;
 public class SyncRequestResult {
 
     @JsonProperty("ResultMessage")
-    public ResultMessage resultMessage;
+    public ResultMessage resultMessage = new ResultMessage();
 
 }

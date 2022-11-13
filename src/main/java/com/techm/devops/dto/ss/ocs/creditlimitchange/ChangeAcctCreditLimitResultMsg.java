@@ -8,8 +8,8 @@ import lombok.Data;
 public class ChangeAcctCreditLimitResultMsg {
 
     @JsonProperty("ResultHeader")
-    public ResultHeader resultHeader;
+    public ResultHeader resultHeader = new ResultHeader();
     @JsonProperty("ChangeAcctCreditLimitResult")
-    public ChangeAcctCreditLimitResult changeAcctCreditLimitResult;
+    public ChangeAcctCreditLimitResult changeAcctCreditLimitResult = new ChangeAcctCreditLimitResult();
 
 }

@@ -7,14 +7,14 @@ import lombok.Data;
 public class CreditLimit {
 
     @JsonProperty("CreditInstID")
-    public String creditInstID;
+    public String creditInstID = "1234567898";
     @JsonProperty("LimitClass")
-    public String limitClass;
+    public String limitClass = "Limitless";
     @JsonProperty("Amount")
-    public String amount;
+    public String amount = "Flenty muoney";
     @JsonProperty("EffectiveTime")
-    public String effectiveTime;
+    public String effectiveTime = "12345678909876543";
     @JsonProperty("ExpireTime")
-    public String expireTime;
+    public String expireTime = "12345678907890";
 
 }

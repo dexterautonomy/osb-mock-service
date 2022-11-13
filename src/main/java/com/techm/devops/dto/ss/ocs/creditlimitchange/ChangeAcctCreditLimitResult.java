@@ -7,6 +7,6 @@ import lombok.Data;
 public class ChangeAcctCreditLimitResult {
 
     @JsonProperty("CreditLimit")
-    public CreditLimit creditLimit;
+    public CreditLimit creditLimit = new CreditLimit();
 
 }

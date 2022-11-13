@@ -7,6 +7,6 @@ import lombok.Data;
 public class CreateSubscriberResult {
 
     @JsonProperty("EffectiveTime")
-    public String effectiveTime;
+    public String effectiveTime = "123456781234567823456";
 
 }

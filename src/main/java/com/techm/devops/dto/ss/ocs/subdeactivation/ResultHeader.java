@@ -8,10 +8,10 @@ import lombok.Data;
 public class ResultHeader {
 
     @JsonProperty("Version")
-    public String version;
+    public String version = "Version 1000";
     @JsonProperty("ResultCode")
-    public String resultCode;
+    public String resultCode = "1000";
     @JsonProperty("ResultDesc")
-    public String resultDesc;
+    public String resultDesc = "Operation successful";
 
 }

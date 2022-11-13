@@ -8,6 +8,6 @@ import lombok.Data;
 public class DelGroupMemberResultMsg {
 
     @JsonProperty("ResultHeader")
-    public ResultHeader resultHeader;
+    public ResultHeader resultHeader = new ResultHeader();
 
 }

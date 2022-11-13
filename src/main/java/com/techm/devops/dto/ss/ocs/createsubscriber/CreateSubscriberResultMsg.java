@@ -10,6 +10,6 @@ public class CreateSubscriberResultMsg {
     @JsonProperty("ResultHeader")
     public ResultHeader resultHeader;
     @JsonProperty("CreateSubscriberResult")
-    public CreateSubscriberResult createSubscriberResult;
+    public CreateSubscriberResult createSubscriberResult = new CreateSubscriberResult();
 
 }

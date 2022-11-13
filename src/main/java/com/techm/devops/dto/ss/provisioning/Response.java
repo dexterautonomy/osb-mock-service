@@ -6,5 +6,5 @@ import lombok.Data;
 @Data
 public class Response {
     @JsonProperty("SendSyncReqResponse")
-    public SendSyncReqResponse sendSyncReqResponse;
+    public SendSyncReqResponse sendSyncReqResponse = new SendSyncReqResponse();
 }

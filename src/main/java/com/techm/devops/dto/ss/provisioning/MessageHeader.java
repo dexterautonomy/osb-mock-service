@@ -5,12 +5,11 @@ import lombok.Data;
 
 @Data
 public class MessageHeader {
-
     @JsonProperty("DebugFlag")
-    public String debugFlag;
+    public String debugFlag = "D";
     @JsonProperty("SessionID")
-    public String sessionID;
+    public String sessionID = "234567890876543";
     @JsonProperty("TraceIDs")
-    public TraceIDs traceIDs;
+    public TraceIDs traceIDs = new TraceIDs();
 
 }

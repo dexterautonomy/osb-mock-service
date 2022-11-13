@@ -8,6 +8,6 @@ import lombok.Data;
 public class ChangeSubPaymentModeResultMsg {
 
     @JsonProperty("ResultHeader")
-    public ResultHeader resultHeader;
+    public ResultHeader resultHeader = new ResultHeader();
 
 }
