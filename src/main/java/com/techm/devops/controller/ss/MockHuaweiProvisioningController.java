@@ -39,4 +39,11 @@ public class MockHuaweiProvisioningController {
         return new ResponseEntity<>(new SendSyncReqResponse(), HttpStatus.OK);
     }
 
+    @PostMapping(value = "modvas", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
+            produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
+    public ResponseEntity<SendSyncReqResponse> modvas(@RequestBody Object object){
+        log.info("--->> Request: {}", object);
+
+        return new ResponseEntity<>(new SendSyncReqResponse(), HttpStatus.OK);
+    }
 }
