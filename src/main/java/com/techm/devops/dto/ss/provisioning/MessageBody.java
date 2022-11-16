@@ -18,5 +18,5 @@ public class MessageBody {
     @JsonProperty("RetDesc")
     public String retDesc = "This is a description";
     @JsonProperty("RetParaList")
-    public List<Object> retParaList = Arrays.asList("1234567", "hgvdsgw75623");
+    public List<Object> retParaList = new ArrayList<>();
 }
