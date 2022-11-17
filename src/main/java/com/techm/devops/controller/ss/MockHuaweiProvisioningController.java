@@ -46,4 +46,28 @@ public class MockHuaweiProvisioningController {
 
         return new ResponseEntity<>(new SendSyncReqResponse(), HttpStatus.OK);
     }
+
+    @PostMapping(value = "suspend", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
+            produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
+    public ResponseEntity<SendSyncReqResponse> suspend(@RequestBody Object object){
+        log.info("--->> Request: {}", object);
+
+        return new ResponseEntity<>(new SendSyncReqResponse(), HttpStatus.OK);
+    }
+
+    @PostMapping(value = "revoke", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
+            produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
+    public ResponseEntity<SendSyncReqResponse> revoke(@RequestBody Object object){
+        log.info("--->> Request: {}", object);
+
+        return new ResponseEntity<>(new SendSyncReqResponse(), HttpStatus.OK);
+    }
+
+    @PostMapping(value = "reactivate", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
+            produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
+    public ResponseEntity<SendSyncReqResponse> reactivate(@RequestBody Object object){
+        log.info("--->> Request: {}", object);
+
+        return new ResponseEntity<>(new SendSyncReqResponse(), HttpStatus.OK);
+    }
 }
