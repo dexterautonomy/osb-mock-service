@@ -1,6 +1,7 @@
 package com.techm.devops.controller.ss;
 
 import com.techm.devops.dto.ss.ocs.changesubpaymentmode.ChangeSubPaymentModeResultMsg;
+import com.techm.devops.dto.ss.ocs.changesubscriberinfo.ChangeSubInfoResultMsg;
 import com.techm.devops.dto.ss.ocs.changesubstatus.ChangeSubStatusResultMsg;
 import com.techm.devops.dto.ss.ocs.createsubscriber.CreateSubscriberResultMsg;
 import com.techm.devops.dto.ss.ocs.creditlimitchange.ChangeAcctCreditLimitResultMsg;
@@ -84,5 +85,13 @@ public class MockOCSProvisioningController {
         log.info("--->> Request: {}", object);
 
         return new ResponseEntity<>(new ChangeSubStatusResultMsg(), HttpStatus.OK);
+    }
+
+    @PostMapping(value = "change-info", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
+            produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
+    public ResponseEntity<Object> changeInfo(@RequestBody Object object){
+        log.info("--->> Request: {}", object);
+
+        return new ResponseEntity<>(new ChangeSubInfoResultMsg(), HttpStatus.OK);
     }
 }
