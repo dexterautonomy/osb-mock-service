@@ -71,6 +71,7 @@ public class MockHuaweiProvisioningController {
         return new ResponseEntity<>(new SendSyncReqResponse(), HttpStatus.OK);
     }
 
+    /*For MODIMSI, MODMSISDN, QUERYUSER, BAR/UNBAR*/
     @PostMapping(value = "generic", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
             produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
     public ResponseEntity<SendSyncReqResponse> generic(@RequestBody Object object){

@@ -7,6 +7,9 @@ import com.techm.devops.dto.ss.ocs.createsubscriber.CreateSubscriberResultMsg;
 import com.techm.devops.dto.ss.ocs.creditlimitchange.ChangeAcctCreditLimitResultMsg;
 import com.techm.devops.dto.ss.ocs.cugsubscription.AddGroupMemberResultMsg;
 import com.techm.devops.dto.ss.ocs.cugsubscription.DelGroupMemberResultMsg;
+import com.techm.devops.dto.ss.ocs.querybalance.QueryBalanceResultMsg;
+import com.techm.devops.dto.ss.ocs.querycustomerinfo.QueryCustomerInfoResultMsg;
+import com.techm.devops.dto.ss.ocs.queryfreelimit.QueryFreeUnitResultMsg;
 import com.techm.devops.dto.ss.ocs.subdeactivation.SubDeactivationResultMsg;
 import com.techm.devops.dto.ss.ocs.suboffering.ChangeSubOfferingResultMsg;
 import lombok.RequiredArgsConstructor;
@@ -94,4 +97,30 @@ public class MockOCSProvisioningController {
 
         return new ResponseEntity<>(new ChangeSubInfoResultMsg(), HttpStatus.OK);
     }
+
+    @PostMapping(value = "balance", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
+            produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
+    public ResponseEntity<Object> balance(@RequestBody Object object){
+        log.info("--->> Request: {}", object);
+
+        return new ResponseEntity<>(new QueryBalanceResultMsg(), HttpStatus.OK);
+    }
+
+    @PostMapping(value = "freelimit", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
+            produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
+    public ResponseEntity<Object> freelimit(@RequestBody Object object){
+        log.info("--->> Request: {}", object);
+
+        return new ResponseEntity<>(new QueryFreeUnitResultMsg(), HttpStatus.OK);
+    }
+
+    @PostMapping(value = "customer-info", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
+            produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
+    public ResponseEntity<Object> customerInfo(@RequestBody Object object){
+        log.info("--->> Request: {}", object);
+
+        return new ResponseEntity<>(new QueryCustomerInfoResultMsg(), HttpStatus.OK);
+    }
+
+//    Change Subscriber Identifier
 }
