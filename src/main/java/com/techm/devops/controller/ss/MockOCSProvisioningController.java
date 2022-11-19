@@ -122,5 +122,13 @@ public class MockOCSProvisioningController {
         return new ResponseEntity<>(new QueryCustomerInfoResultMsg(), HttpStatus.OK);
     }
 
+    @PostMapping(value = "primary-offering", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
+            produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
+    public ResponseEntity<Object> primaryOffering(@RequestBody Object object){
+        log.info("--->> Request: {}", object);
+
+        return new ResponseEntity<>(new com.techm.devops.dto.ss.ocs.primaryoffering.ChangeSubOfferingResultMsg(), HttpStatus.OK);
+    }
+
 //    Change Subscriber Identifier
 }
