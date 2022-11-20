@@ -12,6 +12,7 @@ import com.techm.devops.dto.ss.ocs.querycustomerinfo.QueryCustomerInfoResultMsg;
 import com.techm.devops.dto.ss.ocs.queryfreelimit.QueryFreeUnitResultMsg;
 import com.techm.devops.dto.ss.ocs.subdeactivation.SubDeactivationResultMsg;
 import com.techm.devops.dto.ss.ocs.suboffering.ChangeSubOfferingResultMsg;
+import com.techm.devops.dto.ss.ocs.subscriberidentifier.ChangeSubIdentityResultMsg;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -131,4 +132,11 @@ public class MockOCSProvisioningController {
     }
 
 //    Change Subscriber Identifier
+@PostMapping(value = "subscriber-identifier", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
+        produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
+public ResponseEntity<Object> subscriberIdentifier(@RequestBody Object object){
+    log.info("--->> Request: {}", object);
+
+    return new ResponseEntity<>(new ChangeSubIdentityResultMsg(), HttpStatus.OK);
+}
 }
