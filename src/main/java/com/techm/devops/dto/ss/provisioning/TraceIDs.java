@@ -7,6 +7,6 @@ import lombok.Data;
 public class TraceIDs {
 
     @JsonProperty("TraceID")
-    public String traceID = "Trace fire";
+    public int traceID = 1;
 
 }
