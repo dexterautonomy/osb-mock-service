@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 @Data
-public class SubscriptionResponse {
+public class Envelope {
     @JsonProperty("Body")
-    public Body body;
+    public Body body = new Body();
 }

@@ -1,7 +1,6 @@
 package com.techm.devops.controller.ss;
 
-import com.techm.devops.dto.ss.ocs.createsubscriber.CreateSubscriberResultMsg;
-import com.techm.devops.dto.ss.ocs.subdeactivation.SubDeactivationResultMsg;
+import com.techm.devops.dto.spn.Envelope;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -21,14 +20,14 @@ public class SPNController {
     public ResponseEntity<Object> subscriptionOffer(@RequestBody Object object){
         log.info("--->> Request: {}", object);
 
-        return new ResponseEntity<>(new SubDeactivationResultMsg(), HttpStatus.OK);
+        return new ResponseEntity<>(new Envelope(), HttpStatus.OK);
     }
 
-    @PatchMapping(value = "offer-removal", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
+    @PostMapping(value = "offer-removal", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
             produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
     public ResponseEntity<Object> removeOffer(@RequestBody Object object){
         log.info("--->> Request: {}", object);
 
-        return new ResponseEntity<>(new CreateSubscriberResultMsg(), HttpStatus.OK);
+        return new ResponseEntity<>(new Envelope(), HttpStatus.OK);
     }
 }
