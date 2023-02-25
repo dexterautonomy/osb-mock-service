@@ -11,3 +11,4 @@ public class AddGroupMemberResultMsg {
     public ResultHeader resultHeader = new ResultHeader();
 
 }
+

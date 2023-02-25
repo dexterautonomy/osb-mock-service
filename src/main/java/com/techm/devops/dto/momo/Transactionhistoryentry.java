@@ -18,7 +18,7 @@ public class Transactionhistoryentry {
     @JsonProperty("commitdate")
     public LocalDateTime commitdate = LocalDateTime.now();
     @JsonProperty("fxrate")
-    public String fxrate = "FIXED";
+    public int fxrate = 1;
     @JsonProperty("initiatinguser")
     public String initiatinguser = "ESF-USER";
     @JsonProperty("realuser")
@@ -52,11 +52,11 @@ public class Transactionhistoryentry {
     @JsonProperty("toamount")
     public Toamount toamount = new Toamount();
     @JsonProperty("maininstructionid")
-    public String maininstructionid = "23456ertyuio0987654567";
+    public int maininstructionid = 123456;
     @JsonProperty("instructionid")
-    public String instructionid = "123456789098765hgtfrds3456";
+    public int instructionid = 123456;
     @JsonProperty("externaltransactionid")
-    public String externaltransactionid = "1234567890dfghjkvbnm,uytre";
+    public int externaltransactionid = 123456;
     @JsonProperty("toaccountholder")
     public String toaccountholder = "123423456123456";
     @JsonProperty("fromfirstname")

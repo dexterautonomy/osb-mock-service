@@ -7,6 +7,7 @@ import com.techm.devops.dto.ss.ocs.createsubscriber.CreateSubscriberResultMsg;
 import com.techm.devops.dto.ss.ocs.creditlimitchange.ChangeAcctCreditLimitResultMsg;
 import com.techm.devops.dto.ss.ocs.cugsubscription.AddGroupMemberResultMsg;
 import com.techm.devops.dto.ss.ocs.cugsubscription.DelGroupMemberResultMsg;
+import com.techm.devops.dto.ss.ocs.envelope.addcug.Envelope;
 import com.techm.devops.dto.ss.ocs.querybalance.QueryBalanceResultMsg;
 import com.techm.devops.dto.ss.ocs.querycustomerinfo.QueryCustomerInfoResultMsg;
 import com.techm.devops.dto.ss.ocs.queryfreelimit.QueryFreeUnitResultMsg;
@@ -64,7 +65,7 @@ public class MockOCSProvisioningController {
     public ResponseEntity<Object> addCUG(@RequestBody Object object){
         log.info("--->> Request: {}", object);
 
-        return new ResponseEntity<>(new AddGroupMemberResultMsg(), HttpStatus.OK);
+        return new ResponseEntity<>(new Envelope(), HttpStatus.OK);
     }
 
     @PostMapping(value = "delCUG", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
