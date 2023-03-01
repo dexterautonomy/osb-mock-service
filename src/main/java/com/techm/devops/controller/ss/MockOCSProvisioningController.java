@@ -4,15 +4,12 @@ import com.techm.devops.dto.ss.ocs.changesubpaymentmode.ChangeSubPaymentModeResu
 import com.techm.devops.dto.ss.ocs.changesubscriberinfo.ChangeSubInfoResultMsg;
 import com.techm.devops.dto.ss.ocs.changesubstatus.ChangeSubStatusResultMsg;
 import com.techm.devops.dto.ss.ocs.createsubscriber.CreateSubscriberResultMsg;
-import com.techm.devops.dto.ss.ocs.creditlimitchange.ChangeAcctCreditLimitResultMsg;
-import com.techm.devops.dto.ss.ocs.cugsubscription.AddGroupMemberResultMsg;
 import com.techm.devops.dto.ss.ocs.cugsubscription.DelGroupMemberResultMsg;
 import com.techm.devops.dto.ss.ocs.envelope.addcug.Envelope;
 import com.techm.devops.dto.ss.ocs.querybalance.QueryBalanceResultMsg;
 import com.techm.devops.dto.ss.ocs.querycustomerinfo.QueryCustomerInfoResultMsg;
 import com.techm.devops.dto.ss.ocs.queryfreelimit.QueryFreeUnitResultMsg;
 import com.techm.devops.dto.ss.ocs.subdeactivation.SubDeactivationResultMsg;
-import com.techm.devops.dto.ss.ocs.suboffering.ChangeSubOfferingResultMsg;
 import com.techm.devops.dto.ss.ocs.subscriberidentifier.ChangeSubIdentityResultMsg;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -20,6 +17,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Objects;
 
 @Slf4j
 @RestController
@@ -57,7 +59,7 @@ public class MockOCSProvisioningController {
     public ResponseEntity<Object> creditlimit(@RequestBody Object object){
         log.info("--->> Request: {}", object);
 
-        return new ResponseEntity<>(new ChangeAcctCreditLimitResultMsg(), HttpStatus.OK);
+        return new ResponseEntity<>(new com.techm.devops.dto.ss.ocs.creditlimitchange.Envelope(), HttpStatus.OK);
     }
 
     @PostMapping(value = "addCUG", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
@@ -81,7 +83,7 @@ public class MockOCSProvisioningController {
     public ResponseEntity<Object> suboffering(@RequestBody Object object){
         log.info("--->> Request: {}", object);
 
-        return new ResponseEntity<>(new ChangeSubOfferingResultMsg(), HttpStatus.OK);
+        return new ResponseEntity<>(new com.techm.devops.dto.ss.ocs.suboffering.Envelope(), HttpStatus.OK);
     }
 
     @PostMapping(value = "changestatus", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
@@ -129,14 +131,14 @@ public class MockOCSProvisioningController {
     public ResponseEntity<Object> primaryOffering(@RequestBody Object object){
         log.info("--->> Request: {}", object);
 
-        return new ResponseEntity<>(new com.techm.devops.dto.ss.ocs.primaryoffering.ChangeSubOfferingResultMsg(), HttpStatus.OK);
+        return new ResponseEntity<>(new com.techm.devops.dto.ss.ocs.primaryoffering.Envelope(), HttpStatus.OK);
     }
 
-@PostMapping(value = "subscriber-identifier", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
-        produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
-public ResponseEntity<Object> subscriberIdentifier(@RequestBody Object object){
-    log.info("--->> Request: {}", object);
+    @PostMapping(value = "subscriber-identifier", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
+            produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
+    public ResponseEntity<Object> subscriberIdentifier(@RequestBody Object object){
+        log.info("--->> Request: {}", object);
 
-    return new ResponseEntity<>(new ChangeSubIdentityResultMsg(), HttpStatus.OK);
-}
+        return new ResponseEntity<>(new ChangeSubIdentityResultMsg(), HttpStatus.OK);
+    }
 }

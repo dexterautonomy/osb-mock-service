@@ -1,6 +1,6 @@
 package com.techm.devops.controller.ss;
 
-import com.techm.devops.dto.ss.provisioning.SendSyncReqResponse;
+import com.techm.devops.dto.ss.provisioning.Envelope;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -17,66 +17,66 @@ public class MockHuaweiProvisioningController {
 
     @PostMapping(value = "addsub", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
             produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
-    public ResponseEntity<SendSyncReqResponse> addSub(@RequestBody Object object){
+    public ResponseEntity<Object> addSub(@RequestBody Object object){
         log.info("--->> Request: {}", object);
 
-        return new ResponseEntity<>(new SendSyncReqResponse(), HttpStatus.OK);
+        return new ResponseEntity<>(new Envelope(), HttpStatus.OK);
     }
 
     @PostMapping(value = "rmvsub", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
             produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
-    public ResponseEntity<SendSyncReqResponse> rmvSub(@RequestBody Object object){
+    public ResponseEntity<Object> rmvSub(@RequestBody Object object){
         log.info("--->> Request: {}", object);
 
-        return new ResponseEntity<>(new SendSyncReqResponse(), HttpStatus.OK);
+        return new ResponseEntity<>(new Envelope(), HttpStatus.OK);
     }
 
     @PostMapping(value = "modproduct", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
             produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
-    public ResponseEntity<SendSyncReqResponse> modProd(@RequestBody Object object){
+    public ResponseEntity<Object> modProd(@RequestBody Object object){
         log.info("--->> Request: {}", object);
 
-        return new ResponseEntity<>(new SendSyncReqResponse(), HttpStatus.OK);
+        return new ResponseEntity<>(new Envelope(), HttpStatus.OK);
     }
 
     @PostMapping(value = "modvas", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
             produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
-    public ResponseEntity<SendSyncReqResponse> modvas(@RequestBody Object object){
+    public ResponseEntity<Object> modvas(@RequestBody Object object){
         log.info("--->> Request: {}", object);
 
-        return new ResponseEntity<>(new SendSyncReqResponse(), HttpStatus.OK);
+        return new ResponseEntity<>(new Envelope(), HttpStatus.OK);
     }
 
     @PostMapping(value = "suspend", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
             produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
-    public ResponseEntity<SendSyncReqResponse> suspend(@RequestBody Object object){
+    public ResponseEntity<Object> suspend(@RequestBody Object object){
         log.info("--->> Request: {}", object);
 
-        return new ResponseEntity<>(new SendSyncReqResponse(), HttpStatus.OK);
+        return new ResponseEntity<>(new Envelope(), HttpStatus.OK);
     }
 
     @PostMapping(value = "revoke", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
             produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
-    public ResponseEntity<SendSyncReqResponse> revoke(@RequestBody Object object){
+    public ResponseEntity<Object> revoke(@RequestBody Object object){
         log.info("--->> Request: {}", object);
 
-        return new ResponseEntity<>(new SendSyncReqResponse(), HttpStatus.OK);
+        return new ResponseEntity<>(new Envelope(), HttpStatus.OK);
     }
 
     @PostMapping(value = "reactivate", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
             produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
-    public ResponseEntity<SendSyncReqResponse> reactivate(@RequestBody Object object){
+    public ResponseEntity<Object> reactivate(@RequestBody Object object){
         log.info("--->> Request: {}", object);
 
-        return new ResponseEntity<>(new SendSyncReqResponse(), HttpStatus.OK);
+        return new ResponseEntity<>(new Envelope(), HttpStatus.OK);
     }
 
     /*For MODIMSI, MODMSISDN, QUERYUSER, BAR/UNBAR*/
     @PostMapping(value = "generic", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
             produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
-    public ResponseEntity<SendSyncReqResponse> generic(@RequestBody Object object){
+    public ResponseEntity<Object> generic(@RequestBody Object object){
         log.info("--->> Request: {}", object);
 
-        return new ResponseEntity<>(new SendSyncReqResponse(), HttpStatus.OK);
+        return new ResponseEntity<>(new Envelope(), HttpStatus.OK);
     }
 }
