@@ -1,4 +1,4 @@
-package com.techm.devops.dto.ss.ocs.cugsubscription;
+package com.techm.devops.dto.ss.ocs.cugsubscription.addcug;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.techm.devops.dto.ss.ocs.subdeactivation.ResultHeader;
@@ -8,7 +8,7 @@ import lombok.Data;
 public class AddGroupMemberResultMsg {
 
     @JsonProperty("ResultHeader")
-    public ResultHeader resultHeader = new ResultHeader();
+    private ResultHeader resultHeader = new ResultHeader();
 
 }
 

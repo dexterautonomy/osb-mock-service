@@ -8,6 +8,6 @@ import lombok.Data;
 public class ChangeSubOfferingResultMsg {
 
     @JsonProperty("ResultHeader")
-    public ResultHeader resultHeader = new ResultHeader();
+    private ResultHeader resultHeader = new ResultHeader();
 
 }
