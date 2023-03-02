@@ -31,9 +31,9 @@ public class FilterConfig implements Filter {
 		String sourceIp = httpRequest.getHeader("X-Forwarded-For") == null 
 				? httpRequest.getRemoteAddr()
 				: httpRequest.getHeader("X-Forwarded-For");
-		log.info("---->>> HTTP METHOD: " + httpMethod);
-		log.info("---->>> REQUEST URI: " + requestURI);
-		log.info("---->>> SOURCE IP: " + sourceIp);
+//		log.info("---->>> HTTP METHOD: " + httpMethod);
+//		log.info("---->>> REQUEST URI: " + requestURI);
+//		log.info("---->>> SOURCE IP: " + sourceIp);
 		chain.doFilter(request, response);
 	}
 

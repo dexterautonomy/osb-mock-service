@@ -18,7 +18,7 @@ public class MockHuaweiProvisioningController {
     @PostMapping(value = "addsub", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
             produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
     public ResponseEntity<Object> addSub(@RequestBody Object object){
-        log.info("--->> Request: {}", object);
+        log.info("--->> Huawei: AddSub");
 
         return new ResponseEntity<>(new Envelope(), HttpStatus.OK);
     }
@@ -26,7 +26,7 @@ public class MockHuaweiProvisioningController {
     @PostMapping(value = "rmvsub", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
             produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
     public ResponseEntity<Object> rmvSub(@RequestBody Object object){
-        log.info("--->> Request: {}", object);
+        log.info("--->> Huawei: RmvSub");
 
         return new ResponseEntity<>(new Envelope(), HttpStatus.OK);
     }
@@ -34,7 +34,7 @@ public class MockHuaweiProvisioningController {
     @PostMapping(value = "modproduct", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
             produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
     public ResponseEntity<Object> modProd(@RequestBody Object object){
-        log.info("--->> Request: {}", object);
+        log.info("--->> Huawei: ModProduct");
 
         return new ResponseEntity<>(new Envelope(), HttpStatus.OK);
     }
@@ -42,7 +42,7 @@ public class MockHuaweiProvisioningController {
     @PostMapping(value = "modvas", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
             produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
     public ResponseEntity<Object> modvas(@RequestBody Object object){
-        log.info("--->> Request: {}", object);
+        log.info("--->> Huawei: ModVAS");
 
         return new ResponseEntity<>(new Envelope(), HttpStatus.OK);
     }
@@ -50,7 +50,7 @@ public class MockHuaweiProvisioningController {
     @PostMapping(value = "suspend", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
             produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
     public ResponseEntity<Object> suspend(@RequestBody Object object){
-        log.info("--->> Request: {}", object);
+        log.info("--->> Huawei: Suspension");
 
         return new ResponseEntity<>(new Envelope(), HttpStatus.OK);
     }
@@ -58,7 +58,7 @@ public class MockHuaweiProvisioningController {
     @PostMapping(value = "revoke", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
             produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
     public ResponseEntity<Object> revoke(@RequestBody Object object){
-        log.info("--->> Request: {}", object);
+        log.info("--->> Huawei: RevokeSuspension");
 
         return new ResponseEntity<>(new Envelope(), HttpStatus.OK);
     }
@@ -66,7 +66,7 @@ public class MockHuaweiProvisioningController {
     @PostMapping(value = "reactivate", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
             produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
     public ResponseEntity<Object> reactivate(@RequestBody Object object){
-        log.info("--->> Request: {}", object);
+        log.info("--->> Huawei: ManualReactivation");
 
         return new ResponseEntity<>(new Envelope(), HttpStatus.OK);
     }
@@ -75,7 +75,7 @@ public class MockHuaweiProvisioningController {
     @PostMapping(value = "generic", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
             produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
     public ResponseEntity<Object> generic(@RequestBody Object object){
-        log.info("--->> Request: {}", object);
+        log.info("--->> Huawei: ModIMSI | ModMSISDN | QueryUser");
 
         return new ResponseEntity<>(new Envelope(), HttpStatus.OK);
     }
