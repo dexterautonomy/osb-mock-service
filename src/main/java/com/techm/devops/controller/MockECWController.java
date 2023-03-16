@@ -1,5 +1,8 @@
 package com.techm.devops.controller;
 
+import com.techm.devops.dto.ben.PinResetResponse;
+import com.techm.devops.dto.bn.MethodResponse;
+import com.techm.devops.dto.bn.Response;
 import com.techm.devops.dto.ecw.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -100,5 +103,13 @@ public class MockECWController {
 		log.info("--->> Gotten token: {}", map);
 
 		return new ResponseEntity<>(map, HttpStatus.OK);
+	}
+
+	@PostMapping(value = "reset-pin", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
+			produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
+	public ResponseEntity<Object> resetPin(@RequestBody Object object){
+		log.info("--->> Benin use case: Reset Pin: {}", object);
+
+		return new ResponseEntity<>(new PinResetResponse(), HttpStatus.OK);
 	}
 }

@@ -14,7 +14,7 @@ public class ResultHeader {
     @JsonProperty("SequenceId")
     public String sequenceId = "zxdfguiop098765432";
     @JsonProperty("ResultCode")
-    public String resultCode = "00";
+    public String resultCode = "405000000";
     @JsonProperty("OrderId")
     public String orderId = "0987654321";
     @JsonProperty("ResultDesc")

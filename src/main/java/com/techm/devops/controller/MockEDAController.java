@@ -27,7 +27,7 @@ public class MockEDAController {
         log.info("--->> EDA Request: {}", caiRequest);
 
         CAIResponse caiResponse = new CAIResponse();
-        caiResponse.setActualResponse("Enter command: RESP:0");
+        caiResponse.setActualResponse(" Enter command: RESP:TRANSID,1234567890987654:0");
 
         return new ResponseEntity<>(caiResponse, HttpStatus.OK);
     }
