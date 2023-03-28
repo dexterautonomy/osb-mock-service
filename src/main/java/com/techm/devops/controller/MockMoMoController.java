@@ -1,5 +1,7 @@
 package com.techm.devops.controller;
 
+import com.techm.devops.dto.ecw.UpdateIMSI;
+import com.techm.devops.dto.ecw.UpdateIMSIResponse;
 import com.techm.devops.dto.momo.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -70,5 +72,31 @@ public class MockMoMoController {
         log.info("--->> {}", paymentCompletedRequestDTO);
 
         return ResponseEntity.ok(new PaymentCompletedResponseDTO());
+    }
+
+
+
+    @PostMapping(value = "set-imsi", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
+            produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
+    public ResponseEntity<Void> setIMSI(@RequestBody Object request){
+        log.info("--->> Set IMSI Request: {}", request);
+
+        return new ResponseEntity<>(null, HttpStatus.OK);
+    }
+
+    @PostMapping(value = "get-imsi", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
+            produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
+    public ResponseEntity<GetIMSIResponse> getIMSI(@RequestBody Object request){
+        log.info("--->> Get IMSI Request: {}", request);
+
+        return new ResponseEntity<>(new GetIMSIResponse(), HttpStatus.OK);
+    }
+
+    @PostMapping(value = "debit", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
+            produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
+    public ResponseEntity<DebitResponse> debitRequest(@RequestBody Object request){
+        log.info("--->> Debit Request: {}", request);
+
+        return new ResponseEntity<>(new DebitResponse(), HttpStatus.OK);
     }
 }
