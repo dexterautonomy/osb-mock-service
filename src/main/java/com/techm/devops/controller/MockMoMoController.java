@@ -74,8 +74,6 @@ public class MockMoMoController {
         return ResponseEntity.ok(new PaymentCompletedResponseDTO());
     }
 
-
-
     @PostMapping(value = "set-imsi", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
             produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
     public ResponseEntity<Void> setIMSI(@RequestBody Object request){
@@ -94,7 +92,7 @@ public class MockMoMoController {
 
     @PostMapping(value = "debit", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
             produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
-    public ResponseEntity<DebitResponse> debitRequest(@RequestBody Object request){
+    public ResponseEntity<DebitResponse> debitRequest(@RequestBody Object request) {
         log.info("--->> Debit Request: {}", request);
 
         return new ResponseEntity<>(new DebitResponse(), HttpStatus.OK);
