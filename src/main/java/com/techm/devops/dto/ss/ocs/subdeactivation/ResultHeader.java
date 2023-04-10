@@ -10,7 +10,7 @@ public class ResultHeader {
     @JsonProperty("Version")
     public String version = "1000";
     @JsonProperty("ResultCode")
-    public String resultCode = "1000";
+    public String resultCode = "0";
     @JsonProperty("ResultDesc")
     public String resultDesc = "Operation successful";
 

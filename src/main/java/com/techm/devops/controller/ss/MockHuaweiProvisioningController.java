@@ -19,6 +19,7 @@ public class MockHuaweiProvisioningController {
             produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
     public ResponseEntity<Object> addSub(@RequestBody Object object){
         log.info("--->> Huawei: AddSub");
+        log.info("--->> Request: {}", object);
 
         return new ResponseEntity<>(new Envelope(), HttpStatus.OK);
     }
@@ -27,6 +28,7 @@ public class MockHuaweiProvisioningController {
             produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
     public ResponseEntity<Object> rmvSub(@RequestBody Object object){
         log.info("--->> Huawei: RmvSub");
+        log.info("--->> Request: {}", object);
 
         return new ResponseEntity<>(new Envelope(), HttpStatus.OK);
     }
@@ -35,6 +37,7 @@ public class MockHuaweiProvisioningController {
             produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
     public ResponseEntity<Object> modProd(@RequestBody Object object){
         log.info("--->> Huawei: ModProduct");
+        log.info("--->> Request: {}", object);
 
         return new ResponseEntity<>(new Envelope(), HttpStatus.OK);
     }
@@ -43,6 +46,7 @@ public class MockHuaweiProvisioningController {
             produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
     public ResponseEntity<Object> modvas(@RequestBody Object object){
         log.info("--->> Huawei: ModVAS");
+        log.info("--->> Request: {}", object);
 
         return new ResponseEntity<>(new Envelope(), HttpStatus.OK);
     }
@@ -51,6 +55,7 @@ public class MockHuaweiProvisioningController {
             produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
     public ResponseEntity<Object> suspend(@RequestBody Object object){
         log.info("--->> Huawei: Suspension");
+        log.info("--->> Request: {}", object);
 
         return new ResponseEntity<>(new Envelope(), HttpStatus.OK);
     }
@@ -59,6 +64,7 @@ public class MockHuaweiProvisioningController {
             produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
     public ResponseEntity<Object> revoke(@RequestBody Object object){
         log.info("--->> Huawei: RevokeSuspension");
+        log.info("--->> Request: {}", object);
 
         return new ResponseEntity<>(new Envelope(), HttpStatus.OK);
     }
@@ -67,6 +73,7 @@ public class MockHuaweiProvisioningController {
             produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
     public ResponseEntity<Object> reactivate(@RequestBody Object object){
         log.info("--->> Huawei: ManualReactivation");
+        log.info("--->> Request: {}", object);
 
         return new ResponseEntity<>(new Envelope(), HttpStatus.OK);
     }
@@ -76,6 +83,7 @@ public class MockHuaweiProvisioningController {
             produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
     public ResponseEntity<Object> generic(@RequestBody Object object){
         log.info("--->> Huawei: ModIMSI | ModMSISDN | QueryUser");
+        log.info("--->> Request: {}", object);
 
         return new ResponseEntity<>(new Envelope(), HttpStatus.OK);
     }
