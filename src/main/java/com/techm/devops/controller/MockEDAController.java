@@ -58,4 +58,26 @@ public class MockEDAController {
 
         return new ResponseEntity<>(map, HttpStatus.OK);
     }
+
+    @PostMapping(value = "vlr", consumes = { MediaType.APPLICATION_XML_VALUE},
+            produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
+    public ResponseEntity<CAIResponse> edaMockVLR(@RequestBody EDARequest caiRequest){
+        log.info("--->> EDA Request: {}", caiRequest);
+
+        CAIResponse caiResponse = new CAIResponse();
+        caiResponse.setActualResponse(" Enter command: RESP:TRANSID,00111223:0:RESULT,HLRSN,1:IMSI,645020055427697:ISDN,260765646628:CardType,USIM:NAM,BOTH:CATEGORY,COMMON:SABLOCK:BasicService:Telephony(TS11):EmergencyCall(TS12):ShortMessageMT_PP(TS21):ShortMessageMO_PP(TS22):DefaultCall,Telephony(TS11):SSData:CFU,PROV:CFB,PROV:CFNRY,PROV:CFNRC,PROV:BAOC,PROV:BOIC,PROV:BOICEXHC,PROV:BAIC,PROV:BICROAM,PROV:CLIP,PROV:CW,PROV:HOLD,PROV:MPTY,PROV:CCBSTARGET,PROV:O-CSI:TPLID,31:STATE,TRUE:T-CSI:TPLID,33:STATE,TRUE:U-CSI:TPLID,17:VLR/SGSNRoamingRestrict:SGSNLIST,1:GPRSData:CNTXID,1:APN,internet:CNTXID,2:APN,wap:CNTXID,3:APN,mms:EPSData:CNTXID,1:APNTPLID,3:SMDP,MSC:RROption,ALL_PLMNS:SMSINAPService:SKEY,0");
+
+        return new ResponseEntity<>(caiResponse, HttpStatus.OK);
+    }
+
+    @PostMapping(value = "hlr", consumes = { MediaType.APPLICATION_XML_VALUE},
+            produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
+    public ResponseEntity<CAIResponse> edaMockHLR(@RequestBody EDARequest caiRequest){
+        log.info("--->> EDA Request: {}", caiRequest);
+
+        CAIResponse caiResponse = new CAIResponse();
+        caiResponse.setActualResponse(" Enter command: RESP:TRANSID,00112235:0:RESULT,IMSI,645020055427697:MSISDN,260765646628:STATUS,1:OnHLR,0");
+
+        return new ResponseEntity<>(caiResponse, HttpStatus.OK);
+    }
 }

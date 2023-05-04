@@ -97,4 +97,12 @@ public class MockMoMoController {
 
         return new ResponseEntity<>(new DebitResponse(), HttpStatus.OK);
     }
+
+    @PostMapping(value = "registration", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
+            produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
+    public ResponseEntity<RegistrationResponse> registrationRequest(@RequestBody Object request) {
+        log.info("--->> Registration Request: {}", request);
+
+        return new ResponseEntity<>(new RegistrationResponse(), HttpStatus.OK);
+    }
 }
