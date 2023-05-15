@@ -14,7 +14,7 @@ public class MessageBody {
     @JsonProperty("Serial")
     public String serial = "12345678900987654321234567890-0987654";
     @JsonProperty("RetCode")
-    public String retCode = "U0001";
+    public String retCode = "U000";
     @JsonProperty("RetDesc")
     public String retDesc = "This is a description";
     @JsonProperty("RetParaList")
