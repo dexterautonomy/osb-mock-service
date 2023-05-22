@@ -1,0 +1,6 @@
+<Body>
+	<errorResponse errorcode="VALIDATION_ERROR">
+		<arguments name="fri" value="invalid fri"/>
+		<arguments name="message" value="Request: GetBalanceRequest violates constraints!"/>
+	</errorResponse>
+</Body>

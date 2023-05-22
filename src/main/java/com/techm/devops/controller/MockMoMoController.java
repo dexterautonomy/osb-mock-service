@@ -3,6 +3,10 @@ package com.techm.devops.controller;
 import com.techm.devops.dto.ecw.UpdateIMSI;
 import com.techm.devops.dto.ecw.UpdateIMSIResponse;
 import com.techm.devops.dto.momo.*;
+import com.techm.devops.manualXML.Argument;
+import com.techm.devops.manualXML.Body;
+import com.techm.devops.manualXML.ErrorResponse;
+import com.techm.devops.manualXML.XMLToPOJO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -104,5 +108,28 @@ public class MockMoMoController {
         log.info("--->> Registration Request: {}", request);
 
         return new ResponseEntity<>(new RegistrationResponse(), HttpStatus.OK);
+    }
+
+    @PostMapping(value = "error", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
+            produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
+    public ResponseEntity<String> error(@RequestBody Object request) {
+        log.info("--->> Error: {}", request);
+
+        Body body = new Body();
+        ErrorResponse errorResponse = new ErrorResponse();
+
+        for(int count = 0; count < 2; count++) {
+            Argument argument = new Argument();
+            if(count == 0) {
+                argument.setName("fri");
+                argument.setValue("invalid fri");
+            } else {
+                argument.setName("message");
+                argument.setValue("Request: GetBalanceRequest violates constraints!");
+            }
+            errorResponse.getArguments().add(argument);
+        }
+
+        return new ResponseEntity<>(errorResponse.toString(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }
