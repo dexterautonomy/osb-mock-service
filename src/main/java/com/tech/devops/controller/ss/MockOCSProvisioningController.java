@@ -125,7 +125,8 @@ public class MockOCSProvisioningController {
 
     @PostMapping(value = "customer-info", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
             produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
-    public ResponseEntity<Object> customerInfo(@RequestBody Object object){
+    public ResponseEntity<Object> customerInfo(@RequestBody Object object) throws InterruptedException {
+        Thread.sleep(5000);
         log.info("--->> OCS: QueryCustomerInformation");
         log.info("--->> Request: {}", object);
 

@@ -3,6 +3,10 @@ package com.tech.devops.controller;
 import com.tech.devops.dto.ben.PinResetResponse;
 import com.tech.devops.dto.ecw.*;
 import com.tech.devops.dto.ecw.*;
+import com.tech.devops.manualXML.Argument;
+import com.tech.devops.manualXML.Body;
+import com.tech.devops.manualXML.ErrorResponse;
+import com.tech.devops.manualXML.Fault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -110,5 +114,36 @@ public class MockECWController {
 		log.info("--->> Benin use case: Reset Pin: {}", object);
 
 		return new ResponseEntity<>(new PinResetResponse(), HttpStatus.OK);
+	}
+
+	@PostMapping(value = "error", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
+			produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
+	public ResponseEntity<String> error(@RequestBody Object request) {
+		log.info("--->> Error: {}", request);
+
+		Body body = new Body();
+		ErrorResponse errorResponse = new ErrorResponse();
+
+		for(int count = 0; count < 2; count++) {
+			Argument argument = new Argument();
+			if(count == 0) {
+				argument.setName("fri");
+				argument.setValue("invalid fri");
+			} else {
+				argument.setName("message");
+				argument.setValue("Request: GetBalanceRequest violates constraints!");
+			}
+			errorResponse.getArguments().add(argument);
+		}
+
+		return new ResponseEntity<>(errorResponse.toString(), HttpStatus.INTERNAL_SERVER_ERROR);
+	}
+
+	@PostMapping(value = "fault", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
+			produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
+	public ResponseEntity<String> fault(@RequestBody Object request) {
+		log.info("--->> Error: {}", request);
+
+		return new ResponseEntity<>(Fault.fault(), HttpStatus.OK);
 	}
 }
