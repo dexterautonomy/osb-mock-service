@@ -28,6 +28,7 @@ public class MockEDAController {
 
         CAIResponse caiResponse = new CAIResponse();
         caiResponse.setActualResponse(" Enter command: RESP:TRANSID,1234567890987654:0");
+//        caiResponse.setActualResponse(" Enter command: RESP:TRANSID,6354734836:0:noVLRConnected,TRUE");
 
         return new ResponseEntity<>(caiResponse, HttpStatus.OK);
     }

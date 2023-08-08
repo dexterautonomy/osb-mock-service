@@ -146,4 +146,168 @@ public class MockECWController {
 
 		return new ResponseEntity<>(Fault.fault(), HttpStatus.OK);
 	}
+
+	@PostMapping(value = "getaccountholderaddress", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
+			produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
+	public ResponseEntity<String> getaccountholderaddress(@RequestBody Object request) {
+		log.info("--->> Request: {}", request);
+
+		String response = "<ns2:getaccountholderaddressresponse xmlns:ns2=\"http://www.ericsson.com/em/emm/provisioning/v1_0\">\n" +
+				"   <addresses>\n" +
+				"      <address>\n" +
+				"         <AdrTp>HOME</AdrTp>\n" +
+				"         <MlngInd>false</MlngInd>\n" +
+				"         <RegnAdrInd>false</RegnAdrInd>\n" +
+				"         <NmAndAdr>\n" +
+				"            <Adr>\n" +
+				"               <AdrTp>HOME</AdrTp>\n" +
+				"            </Adr>\n" +
+				"         </NmAndAdr>\n" +
+				"      </address>\n" +
+				"\t  <address>\n" +
+				"         <AdrTp>HOME</AdrTp>\n" +
+				"         <MlngInd>false</MlngInd>\n" +
+				"         <RegnAdrInd>false</RegnAdrInd>\n" +
+				"         <NmAndAdr>\n" +
+				"            <Adr>\n" +
+				"               <AdrTp>HOME</AdrTp>\n" +
+				"            </Adr>\n" +
+				"         </NmAndAdr>\n" +
+				"      </address>\n" +
+				"\t  <address>\n" +
+				"         <AdrTp>HOME</AdrTp>\n" +
+				"         <MlngInd>false</MlngInd>\n" +
+				"         <RegnAdrInd>false</RegnAdrInd>\n" +
+				"         <NmAndAdr>\n" +
+				"            <Adr>\n" +
+				"               <AdrTp>HOME</AdrTp>\n" +
+				"            </Adr>\n" +
+				"         </NmAndAdr>\n" +
+				"      </address>\n" +
+				"   </addresses>\n" +
+				"</ns2:getaccountholderaddressresponse>\n" +
+				"\n";
+
+		return new ResponseEntity<>(response, HttpStatus.OK);
+	}
+
+	@PostMapping(value = "getaccountholdercitizenship", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
+			produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
+	public ResponseEntity<String> getaccountholdercitizenship(@RequestBody Object request) {
+		log.info("--->> Request: {}", request);
+
+		String response = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n" +
+				"<ns2:getaccountholdercitizenshipresponse xmlns:ns2=\"http://www.ericsson.com/em/emm/provisioning/v1_0\">\n" +
+				"<citizenships>\n" +
+				"<citizenship>\n" +
+				"<MnrInd>false</MnrInd>\n" +
+				"<Ntlty>BFR</Ntlty>\n" +
+				"</citizenship>\n" +
+				"<citizenship>\n" +
+				"<MnrInd>false</MnrInd>\n" +
+				"<Ntlty>BFR</Ntlty>\n" +
+				"</citizenship>\n" +
+				"<citizenship>\n" +
+				"<MnrInd>false</MnrInd>\n" +
+				"<Ntlty>BFR</Ntlty>\n" +
+				"</citizenship>\n" +
+				"</citizenships>\n" +
+				"</ns2:getaccountholdercitizenshipresponse>";
+
+		return new ResponseEntity<>(response, HttpStatus.OK);
+	}
+
+	@PostMapping(value = "getaccountholderidentification", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
+			produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
+	public ResponseEntity<String> getaccountholderidentification(@RequestBody Object request) {
+		log.info("--->> Request: {}", request);
+
+		String response = "<ns2:getaccountholderidentificationresponse xmlns:ns2=\"http://www.ericsson.com/em/emm/provisioning/v1_0\">\n" +
+				"   <identifications>\n" +
+				"      <identification>\n" +
+				"         <Id>I5747489849</Id>\n" +
+				"         <IdTp>NRIN</IdTp>\n" +
+				"      </identification>\n" +
+				"\t  <identification>\n" +
+				"         <Id>I5747489849</Id>\n" +
+				"         <IdTp>NRIN</IdTp>\n" +
+				"      </identification>\n" +
+				"\t  <identification>\n" +
+				"         <Id>I5747489849</Id>\n" +
+				"         <IdTp>NRIN</IdTp>\n" +
+				"      </identification>\n" +
+				"   </identifications>\n" +
+				"</ns2:getaccountholderidentificationresponse>\n";
+
+		return new ResponseEntity<>(response, HttpStatus.OK);
+	}
+
+	@PostMapping(value = "getaccountholderpersonalinformation", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
+			produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
+	public ResponseEntity<String> getaccountholderpersonalinformation(@RequestBody Object request) {
+		log.info("--->> Request: {}", request);
+
+		String response = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n" +
+				"<ns5:getaccountholderpersonalinformationresponse\n" +
+				"xmlns:prc=\"http://www.ericsson.com/em/emm/provisioning/v1_0/common\"\n" +
+				"xmlns:ns2=\"http://www.ericsson.com/em/emm/provisioning/v1_1/common\"\n" +
+				"xmlns:xs=\"http://www.w3.org/2001/XMLSchema\"\n" +
+				"xmlns:ns5=\"http://www.ericsson.com/em/emm/provisioning/v1_1\">\n" +
+				"<information>\n" +
+				"<name>\n" +
+				"<firstname>Hansen</firstname>\n" +
+				"<surname>Duma</surname>\n" +
+				"</name>\n" +
+				"<language>en</language>\n" +
+				"<birth>\n" +
+				"<date>2003-06-05</date>\n" +
+				"<country>SS</country>\n" +
+				"</birth>\n" +
+				"<occupation/>\n" +
+				"<residentialstatus/>\n" +
+				"</information>\n" +
+				"</ns5:getaccountholderpersonalinformationresponse>";
+
+		return new ResponseEntity<>(response, HttpStatus.OK);
+	}
+
+	@PostMapping(value = "updateaccountholderaddress", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
+			produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
+	public ResponseEntity<String> updateaccountholderaddress(@RequestBody Object request) {
+		log.info("--->> Request: {}", request);
+
+		String response = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:updateaccountholderaddressresponse xmlns:ns2=\"http://www.ericsson.com/em/emm/provisioning/v1_0\"/>";
+
+		return new ResponseEntity<>(response, HttpStatus.OK);
+	}
+
+	@PostMapping(value = "updateaccountholdercitizenship", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
+			produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
+	public ResponseEntity<String> updateaccountholdercitizenship(@RequestBody Object request) {
+		log.info("--->> Request: {}", request);
+
+		String response = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:updateaccountholdercitizenshipresponse xmlns:ns2=\"http://www.ericsson.com/em/emm/provisioning/v1_0\"/>";
+
+		return new ResponseEntity<>(response, HttpStatus.OK);
+	}
+
+	@PostMapping(value = "updateaccountholderidentification", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
+			produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
+	public ResponseEntity<String> updateaccountholderidentification(@RequestBody Object request) {
+		log.info("--->> Request: {}", request);
+
+		String response = "<ns8:updateaccountholderidentificationresponse xmlns:op=\"http://www.ericsson.com/em/emm/v1_0/common\" xmlns:fic=\"http://www.ericsson.com/em/emm/financial/v1_2/common\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:ns4=\"http://www.ericsson.com/em/emm/financial/v1_0/common\" xmlns:ns5=\"http://www.ericsson.com/em/emm/v2_1/common\" xmlns:ns6=\"http://www.ericsson.com/em/emm/financial/v1_1/common\" xmlns:ns8=\"http://www.ericsson.com/em/emm/provisioning/v1_0\" xmlns:ns9=\"http://www.ericsson.com/em/emm/financial/v1_2\" xmlns:ns10=\"http://www.ericsson.com/em/emm/financial/v1_0\" xmlns:ns11=\"http://www.ericsson.com/em/emm/financial/v1_1\"/>";
+
+		return new ResponseEntity<>(response, HttpStatus.OK);
+	}
+
+	@PostMapping(value = "updateaccountholderpersonalinformation", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
+			produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
+	public ResponseEntity<String> updateaccountholderpersonalinformation(@RequestBody Object request) {
+		log.info("--->> Request: {}", request);
+
+		String response = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns5:updateaccountholderpersonalinformationresponse xmlns:prc=\"http://www.ericsson.com/em/emm/provisioning/v1_0/common\" xmlns:ns2=\"http://www.ericsson.com/em/emm/provisioning/v1_1/common\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:ns5=\"http://www.ericsson.com/em/emm/provisioning/v1_1\"/>";
+
+		return new ResponseEntity<>(response, HttpStatus.OK);
+	}
 }
