@@ -310,4 +310,16 @@ public class MockECWController {
 
 		return new ResponseEntity<>(response, HttpStatus.OK);
 	}
+
+	@PostMapping(value = "error1", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
+			produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
+	public ResponseEntity<String> error1(@RequestBody Object request) {
+		log.info("--->> Request: {}", request);
+
+		String response = "<ns0:errorResponse \terrorcode=\"COULD_NOT_PERFORM_OPERATION\" xmlns:ns0=\"http://www.ericsson.com/lwac\">\n" +
+				"<arguments \tname=\"message\" value=\"COULD_NOT_PERFORM_OPERATION\"/>\n" +
+				"</ns0:errorResponse>";
+
+		return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+	}
 }
