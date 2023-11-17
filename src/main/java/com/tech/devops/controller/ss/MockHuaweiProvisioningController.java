@@ -87,4 +87,13 @@ public class MockHuaweiProvisioningController {
 
         return new ResponseEntity<>(new Envelope(), HttpStatus.OK);
     }
+
+    @PostMapping(value = "addauc", consumes = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE },
+            produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
+    public ResponseEntity<Object> addAuc(@RequestBody Object object){
+        log.info("--->> Huawei: AddAuc");
+        log.info("--->> Request: {}", object);
+
+        return new ResponseEntity<>(new Envelope(), HttpStatus.OK);
+    }
 }
